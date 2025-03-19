@@ -23,7 +23,7 @@ router.get('/movies', async (req, res) => {
         res.json({ movies: data.results });
     } catch (error) {
         console.error("❌ Erreur lors de la récupération des films:", error.message);
-        res.status(500).json({ error: "Erreur interne du serveur" });
+        res.status(500).json({ error: error.message });
     }
 });
 
